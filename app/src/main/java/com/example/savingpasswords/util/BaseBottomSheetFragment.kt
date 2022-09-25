@@ -8,9 +8,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.createViewModelLazy
 import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import java.lang.reflect.ParameterizedType
 
-abstract class BaseFragment<VB : ViewBinding, VM : ViewModel> : Fragment() {
+
+abstract class BaseBottomSheetFragment<VB : ViewBinding, VM : ViewModel> : BottomSheetDialogFragment() {
 
     protected lateinit var binding: VB private set
     protected lateinit var viewModel: VM private set
