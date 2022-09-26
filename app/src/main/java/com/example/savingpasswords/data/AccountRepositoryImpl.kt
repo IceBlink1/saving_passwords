@@ -5,6 +5,11 @@ import io.reactivex.rxjava3.core.Completable
 import io.reactivex.rxjava3.core.Flowable
 import javax.inject.Inject
 
+/**
+ * Имплементация репозитория для локальной БД
+ *
+ * @property accountDao объект для доступа в БД
+ */
 class AccountRepositoryImpl @Inject constructor(
     private val accountDao: AccountDao
 ) : AccountRepository {

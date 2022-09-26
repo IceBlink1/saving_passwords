@@ -10,6 +10,10 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
+/**
+ * Класс для реализации DI в модуле данных
+ *
+ */
 @InstallIn(SingletonComponent::class)
 @Module
 class DataModule {
