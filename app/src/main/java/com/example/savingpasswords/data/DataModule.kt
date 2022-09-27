@@ -11,7 +11,7 @@ import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 /**
- * Класс для реализации DI в модуле данных
+ * DI Data Module class
  *
  */
 @InstallIn(SingletonComponent::class)

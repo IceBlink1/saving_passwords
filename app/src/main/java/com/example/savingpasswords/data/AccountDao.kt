@@ -5,51 +5,51 @@ import io.reactivex.rxjava3.core.Completable
 import io.reactivex.rxjava3.core.Flowable
 
 /**
- * Интерфейс для последующей генерации объекта для доступа к БД
+ * Interface for generating an object for DB access
  *
  */
 @Dao
 interface AccountDao {
 
     /**
-     * Метод запроса всех существующих аккаунтов
+     * Method for requesting all accounts from DB
      *
-     * @return Все аккаунты из бд
+     * @return all accounts from DB
      */
     @Query("SELECT * FROM account")
     fun getAll(): Flowable<List<Account>>
 
     /**
-     * Метод для поиска аккаунтов по доменному имени
+     * Method for searching accounts by domain name
      *
-     * @param domain запрос, поиск по подстроке
-     * @return все аккаунты, удовлетворяющие запросу
+     * @param domain request, substring search
+     * @return all accountable accounts
      */
     @Query("SELECT * FROM account where domain like '%' || :domain || '%'")
     fun searchByName(domain: String): Flowable<List<Account>>
 
     /**
-     * Метод для удаления аккаунта
+     * Method for deleting an account
      *
-     * @param account аккаунт, который нужно удалить
+     * @param account account to delete
      * @return
      */
     @Delete
     fun delete(account: Account): Completable
 
     /**
-     * Метод для обновления аккаунта
+     * Method for updating account
      *
-     * @param account аккаунт, который нужно обновить
+     * @param account account to be updated
      * @return
      */
     @Update(onConflict = OnConflictStrategy.REPLACE)
     fun update(account: Account): Completable
 
     /**
-     * Метод для вставки аккаунта в БД
+     * Method for inserting accounts into DB
      *
-     * @param accounts переменное число аккаунтов для вставки
+     * @param accounts accounts to be inserted
      * @return
      */
     @Insert

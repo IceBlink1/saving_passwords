@@ -18,6 +18,11 @@ import com.xwray.groupie.GroupieAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
+/**
+ * MainFragment represents main screen of the application
+ * Contains state handling and event subscription
+ *
+ */
 @AndroidEntryPoint
 class MainFragment : BaseFragment<FragmentMainBinding, MainViewModel>(),
     Toolbar.OnMenuItemClickListener {
@@ -63,7 +68,7 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainViewModel>(),
                 showEmpty()
             }
             else -> {
-                showContent(state.accounts, state.searchRequest)
+                showContent(state.accounts)
             }
         }
     }
@@ -94,7 +99,7 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainViewModel>(),
         binding.errorMessage.error = throwable.message
     }
 
-    private fun showContent(accounts: List<Account>, request: String) {
+    private fun showContent(accounts: List<Account>) {
         binding.recyclerView.visible()
         binding.emptyMessage.gone()
         binding.errorMessage.gone()

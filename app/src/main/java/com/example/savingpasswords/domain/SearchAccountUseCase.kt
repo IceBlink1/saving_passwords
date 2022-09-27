@@ -4,6 +4,11 @@ import com.example.savingpasswords.data.Account
 import io.reactivex.rxjava3.core.Flowable
 import javax.inject.Inject
 
+/**
+ * UseCase for searching accounts
+ *
+ * @property repository
+ */
 class SearchAccountUseCase @Inject constructor(private val repository: AccountRepository) {
 
     fun execute(searchRequest: String): Flowable<List<Account>> {

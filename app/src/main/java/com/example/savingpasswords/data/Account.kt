@@ -5,12 +5,12 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 /**
- * Класс аккаунта, основная модель приложения
+ * Account class, main project model
  *
- * @property uid идентификационный ключ
- * @property domain доменное имя аккаунта
- * @property login логин аккаунта
- * @property password пароль аккаунта
+ * @property uid unique identifier
+ * @property domain domain name of a site or an app
+ * @property login login of the account
+ * @property password password of the account
  */
 @Entity
 data class Account(

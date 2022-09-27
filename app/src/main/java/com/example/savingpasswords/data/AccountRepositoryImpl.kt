@@ -6,9 +6,9 @@ import io.reactivex.rxjava3.core.Flowable
 import javax.inject.Inject
 
 /**
- * Имплементация репозитория для локальной БД
+ * Repository implementation for local DB
  *
- * @property accountDao объект для доступа в БД
+ * @property accountDao object for accessing the DB
  */
 class AccountRepositoryImpl @Inject constructor(
     private val accountDao: AccountDao

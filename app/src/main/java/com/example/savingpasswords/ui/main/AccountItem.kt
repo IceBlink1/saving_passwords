@@ -6,6 +6,12 @@ import com.example.savingpasswords.data.Account
 import com.example.savingpasswords.databinding.AccountItemBinding
 import com.xwray.groupie.viewbinding.BindableItem
 
+/**
+ * UI representation of an Account for RecyclerView
+ *
+ * @property account
+ * @property onDeleteButtonPressed
+ */
 class AccountItem(
     private val account: Account,
     private val onDeleteButtonPressed: (Account) -> Unit
